@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import numpy as np
 from shapely.geometry import LineString
 from segysak.segy import segy_loader, segy_writer, segy_header_scan
@@ -46,7 +40,7 @@ output_file = 'seismic_with_coords.sgy'
 trace_pos = {'cdp':21, 'cdp_x':73, 'cdp_y':77}
 segy_writer(seismic_profile, output_file, trace_header_map = trace_pos)
 
-###Read the header
+###Read the header again
 scan = segy_header_scan(output_file)
 scan[scan["std"] > 0]
 
